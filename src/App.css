@@ -1,0 +1,76 @@
+
+
+.App{
+  width: 310px;
+  max-width: 100%;
+  margin: 0 auto;
+  /* background-color: aquamarine; */
+}
+
+li{
+  list-style-type: none;
+}
+
+.boxes{
+  display: flex;
+  justify-content: space-between;
+}
+
+p{
+  font-size: 0.7em;
+}
+
+button{
+  /* background-color: blue; */
+  padding: 0.4em;
+}
+a{
+  text-decoration: none;
+  padding: 0.2em;
+  font-size: 1.2em;
+  /* background-color: red; */
+
+}
+
+
+.repoList{
+  background-color: red;
+  cursor: pointer;
+  padding: 1em 0.50em;
+
+}
+
+.pagination{
+  display: flex;
+  /* background-color: red; */
+  justify-content: space-around;
+  position: relative;
+  bottom: -5em;
+
+}
+
+
+.list-group, li{
+  padding: 1em;
+  /* background-color: blue; */
+}
+
+
+:link{
+  background-color: rgba(128, 128, 128, 0.507);
+  box-shadow: 4px 4px 5px solid gray;
+  padding: 0.4em;
+
+}
+
+
+
+
+
+
+
+
+
+.confirm{
+  background-color: red;
+}
