@@ -1,14 +1,20 @@
-// import React from 'react'
+import React from 'react'
+// import RepoData from "./RepoData";
+const EachRepo = ({eachrepo}) => {
 
-// const EachRepo = ({clickedIndex}) => {
-//   return (
+
+  
+
+  console.log(eachrepo);
+  return (
     
-//     <div>
-//         <h2>Each repo</h2>
-//         <li className='confirm'>{clickedIndex}</li>
+    <div >
+        <h2>{eachrepo[0].name}</h2>
+        <li className='confirm'>{eachrepo[0].description
+}</li>
         
-//     </div>
-//   )
-// }
+    </div>
+  )
+}
 
-// export default EachRepo
+export default EachRepo

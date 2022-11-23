@@ -60,11 +60,19 @@ a{
   background-color: rgba(128, 128, 128, 0.507);
   box-shadow: 4px 4px 5px solid gray;
   padding: 0.4em;
-
+  
 }
 
+.profile-picture img{
+  width: 200px;
+  border-radius: 24%;
+  padding: 10px;
+}
 
+.each-repo{
+  background-color: blue;
 
+}
 
 
 

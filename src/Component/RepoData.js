@@ -5,17 +5,16 @@ import { Link, Outlet } from 'react-router-dom'
 // { useState, useEffect} 
 
 
-const RepoData = ({repoData, loading}) => {
+const RepoData = ({repodata, loading, repoClicked}) => {
     
 //     // console.log(repoData);
     
-//     let repoClicked = ()=> setRepoClick(repoData);
+//     let repoClicked = ()=> setRepoC lick(repoData);
 //     const [repoClick, setRepoClick] = useState('');
 //     console.log(repoClick);
     
 
     // useEffect(() => {
-        const [clickedIndex, setClickedIndex] = useState({});
     
     // //   return () => {
     // //     second
@@ -23,27 +22,24 @@ const RepoData = ({repoData, loading}) => {
     // }, [third])
 
 
-    // const handleClick = (index) => () => {
-    //     setClickedIndex(state => ({
-    //         ...state,
-    //         [index]: !state[index]
-    //     }));
-    // }
     
+    // const clickedIndex = ()=>{
+    //     console.log({clickedIndex});
+    // } 
 
     // clickedIndex={clickedIndex} onClick={handleClick(index)}
 
 
+    console.log(loading);
     if (loading) {
         return <h2>Loading...</h2> 
     }
   return (
     <ul className='list-group'>
-        {repoData.map((repo, index) => (
-            <li  key={repo.id} className='list-group'>
-        <Link className='each-repo' to='/repoData/eachRepo'> {repo.name }</Link>
-                {/* {repoClick}  */}
-                {/* <EachRepo/> */}
+        {repodata.map((repo) => (
+            <li onClick={()=> repoClicked(repo.id)} key={repo.id} className='list-group'>
+        <Link  className='each-repo' to='/repoData/eachRepo' repodata={repodata}> {repo.name }</Link>
+
             </li>
 
             
