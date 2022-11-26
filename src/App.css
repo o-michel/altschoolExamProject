@@ -1,4 +1,6 @@
-
+body{
+  background-color: rgb(148, 145, 145);
+}
 
 .App{
   width: 310px;
@@ -24,11 +26,18 @@ button{
   /* background-color: blue; */
   padding: 0.4em;
 }
+
+nav{
+  /* background-color: red; */
+  text-align: center;
+}
 a{
   text-decoration: none;
-  padding: 0.2em;
+  /* padding: 0.2em; */
   font-size: 1.2em;
+  /* width: 80%; */
   /* background-color: red; */
+  
 
 }
 
@@ -41,9 +50,12 @@ a{
 }
 
 .pagination{
+  /* background-color: rgb(155, 143, 143); */
+
   display: flex;
+  padding: 0px;
   /* background-color: red; */
-  justify-content: space-around;
+  justify-content: center;
   position: relative;
   bottom: -5em;
 
@@ -51,17 +63,51 @@ a{
 
 
 .list-group, li{
-  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  padding: 0.4em;
+  /* align-items: center; */
+  /* justify-content: center; */
   /* background-color: blue; */
 }
 
 
+
+.btn {
+  border: none;
+  outline: none;
+  padding: 10px 16px;
+  /* background-color: #f1f1f1; */
+  cursor: pointer;
+}
+
+.active, .btn:hover {
+  background-color: #666;
+  color: white;
+  border-radius: 4px;
+  /* padding: 11px; */
+  /* font-size: 0.7em; */
+  font-weight: 700;
+  transition: 0.3s ;
+}
+
+
+
 :link{
-  background-color: rgba(128, 128, 128, 0.507);
+  /* display: inline-block; */
+  background-color: rgba(128, 128, 128, 0.13);
   box-shadow: 4px 4px 5px solid gray;
   padding: 0.4em;
   
+  
 }
+/* :link:nth-child(1){
+  background-color: rgba(128, 128, 128, 0.712);
+} */
+/* :link:active{
+  background-color: rgb(128, 128, 128);
+
+} */
 
 .profile-picture img{
   width: 200px;
@@ -70,15 +116,168 @@ a{
 }
 
 .each-repo{
-  background-color: blue;
+  display: inline-flex;
+  box-shadow: inset rgb(204, 219, 232) 1.5px 1.5px 9px 2.5px;
+  /* box-shadow:  3px 3px 6px 0px rgb(204, 219, 232) inset, */
+  /* background-color: blue; */
+  color: rgb(92, 71, 71);
+  /* color: #666; */
+  padding: 1em 0.5em;
+  font-weight: 900;
+  transition: 0.3s;
+  
 
+}
+
+.each-repo:hover,:active{
+  background-color: #666;
+  color: white;
 }
 
 
 
 
+div.repo{
+  /* background-color: yellow; */
+  text-transform: uppercase;
+  /* text-overflow: clip; */
+  text-shadow: #666;
+  line-height: 1em;
+  letter-spacing: 0.6em;
+  font-weight: 900;
+  font-size: larger;
+  text-decoration: double;
+
+}
+
 
 
 .confirm{
+  /* background-color: red; */
+  border: 2px solid #666;
+}
+
+@media (min-width:600px) {
+  /* body{
+    background-color: green;
+  } */
+  
+.App{
+  width: 510px;
+  /* max-width: 100%; */
+  /* margin: 0 auto; */
+  /* background-color: aquamarine; */
+}
+
+
+p{
+  font-size: 0.9em;
+}
+
+button{
+  /* background-color: blue; */
+  padding: 0.7em;
+}
+.profile-container{
+  display: flex;
+  justify-content: center;
+  flex-direction: row-reverse;
+  /* width: 60%; */
+  /* margin: auto; */
+  /* background-color: green; */
+}
+.profile-word{
+  margin: auto 0px;
+  /* background-color: red; */
+}
+
+:link{
+  padding:2em;
+}
+
+
+/* nav{
+  text-align: center;
+} */
+/* .nav-container{
   background-color: red;
+
+} */
+
+}
+
+
+
+/* 900px above */
+
+
+@media (min-width:900px) {
+  body{
+    /* background-color: red; */
+  }
+  
+.App{
+  width: 840px;
+  /* max-width: 100%; */
+  /* margin: 0 auto; */
+  /* background-color: aquamarine; */
+}
+
+
+p{
+  font-size: 1em;
+}
+
+button{
+  /* background-color: blue; */
+  padding: 1.2em;
+  font-size: large;
+}
+/* .profile-container{
+  display: flex;
+  flex-direction: row-reverse;
+} */
+/* .profile-word{
+  margin: auto;
+  background-color: red;
+} */
+
+/* :link{
+  padding:2em;
+} */
+
+
+nav{
+  text-align: start;
+}
+/* .nav-container{
+  background-color: red;
+
+} */
+
+.pagination{
+  /* background-color: rgb(155, 143, 143); */
+
+  /* display: flex; */
+  /* padding: 30px; */
+  /* background-color: red; */
+  /* justify-content: stretch; */
+  position: relative;
+  bottom: -3em;
+
+}
+
+.page-link{
+  font-size: 0.8em;
+}
+
+
+.profile-picture img{
+  width: 300px;
+  border-radius: 20%;
+  padding: 20px;
+}
+
+
+
 }

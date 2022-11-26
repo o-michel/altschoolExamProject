@@ -17,8 +17,10 @@ function App() {
   const [repoData, setRepoData] = useState([]);
   const [eachrepo, seteachrepo] = useState([]);
   const [loading, setLoading] = useState(false);
+  const [clicked, setclicked] = useState(false);
+  const [homesActive, sethomeActive] = useState(true);
   const [currentpage, setCurrentPage] = useState(1);
-  const [postsPerPage] = useState(5);
+  const [postsPerPage] = useState(6);
   
   
 useEffect(() => {
@@ -62,27 +64,40 @@ useEffect(() => {
 
   // clicked repo
   const clickRepo = (id) => {
+    setclicked(true)
     // console.log('clicked', id);
     // console.log(currentPosts);
     // console.log(repoData);
-     seteachrepo(repoData.filter((data) => data.id == id ))
+     seteachrepo(repoData.filter((data) => data.id === id ))
     // console.log(eachrepo[0].name);
+    // setclicked(false)
+
+  }
+
+  // Go back to the previous page i.e list is repository
+  const backToRepo =() => {
+    setclicked(false)
+    sethomeActive(false)
+  }
+  const backToHomes =() => {
+    // setclicked(false)
+    sethomeActive(true)
   }
 
   return (
     <div className="App">
       
       <Router>
-        <nav>
-          <Link to="/">Home</Link>
-          <Link to="repoData">My Portfolio</Link>
+        <nav className='nav-container'>
+          <Link to="/" onClick={backToHomes}><button className={`btn ${homesActive&& "active"}`}>Home</button></Link>
+          <Link to="repoData" onClick={backToRepo}><button className={`btn ${!homesActive&& "active"}`}>My Portfolio</button></Link>
         </nav>
         <Routes>
           <Route path="/" element={ <ErrorBoundary><Homes /> </ErrorBoundary>} />
           
-          <Route className='nastedContainer' path="/repoData"  element={ <ErrorBoundary><RepoData repodata={currentPosts} loading={loading} repoClicked={clickRepo} /></ErrorBoundary>}>
+          <Route className='nastedContainer' path="/repoData"  element={ <ErrorBoundary>{ <RepoData repodata={currentPosts} loading={loading}  clicked={clicked} repoClicked={clickRepo} />} </ErrorBoundary>}>
           
-            <Route   path="eachRepo" element={<ErrorBoundary><EachRepo eachrepo={eachrepo} /> </ErrorBoundary>} />
+            <Route   path="eachRepo" element={<ErrorBoundary>{clicked ? (<EachRepo eachrepo={eachrepo} backEachRepo={backToRepo} />): []} </ErrorBoundary>} />
           
 
           </Route>
